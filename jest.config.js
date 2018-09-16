@@ -12,6 +12,9 @@ module.exports = {
     '.+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
     '^.+\\.tsx?$': 'ts-jest'
   },
+  transformIgnorePatterns: [
+    "node_modules/(?!jest-test)" + "node_modules/(?!(jest-test))"
+  ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1'
   },

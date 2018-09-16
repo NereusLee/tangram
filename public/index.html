@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>tangram</title>
+    <script>
+      function setFontSize(){
+        let html = document.documentElement
+        let w=html.getBoundingClientRect().width;
+        html.style.fontSize=w/15+'px'
+      }
+      setFontSize()
+      window.onresize = setFontSize
+    </script>
   </head>
   <body>
     <noscript>
