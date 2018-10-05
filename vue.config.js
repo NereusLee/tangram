@@ -1,6 +1,6 @@
 module.exports = {
   lintOnSave: false,
-  productionSourceMap:true,
+  productionSourceMap:false,
   pwa: {
     name: 'tangram'
   }
