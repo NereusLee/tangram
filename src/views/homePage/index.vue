@@ -1,6 +1,7 @@
 <template>
   <v-touch @press="addLogo" class="homePage" :style="background"> 
-    <dialog v-model="install" >
+    <my-head></my-head>
+    <Dialog v-model="install" >
       
       <p>添加应用</p>
     </dialog>
@@ -10,11 +11,16 @@
   </v-touch>  
 </template>
 
-<script lang="ts">
+<script lang="tsx">
 import { Component, Vue, Prop } from 'vue-property-decorator';
 import dayjs from 'dayjs'
-import {Button, Card } from 'vant' 
+import {Button, Card, Dialog } from 'vant' 
+import myHead from '@/components/myHead.vue'
 
+// const components:object = {
+//   Button:()=>import(/*webpackChunkName:"chunk-vant"*/'vant/lib/button'),
+//   Card:()=>import(/*webpackChunkName:"chunk-vant"*/'vant/lib/card'),
+// }
 @Component({
   /*tslint:disable*/
   components:{
@@ -22,11 +28,7 @@ import {Button, Card } from 'vant'
     //   const {Button} = res
     //   return Button;
     // }),
-    // Card:()=>import(/*webpackChunkName:"chunk-vant"*/'vant').then(res=>{
-    //   const {Card} = res
-    //   return Card;
-    // })
-    Button,Card
+    Button,Card,myHead
   }
 })
 export default class index extends Vue {
