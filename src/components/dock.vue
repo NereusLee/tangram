@@ -2,11 +2,11 @@
 // import { CreateElement } from "vue";
 import { Component, Prop, Vue, Emit, Watch } from "vue-property-decorator";
 
-const log = console.log.bind(this);
+const log = (data:any)=>console.log(data)
 @Component
 export default class dock extends Vue {
-  @Prop([Number, Boolean])
-  num: number | boolean;
+  @Prop([Number, Number])
+  num!: number | boolean;  //这里的 ! 符号
   count: number = 3;
   @Emit("reset")
   add() {
@@ -16,7 +16,7 @@ export default class dock extends Vue {
   logCount(n: number) {
     log(n);
   }
-  render(h) {
+  render(h:any) {
     log(this.num);
     let p = this.num ? <p>show num{this.num}</p> : <p>not show num</p>;
     return (
