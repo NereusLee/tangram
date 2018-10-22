@@ -22,19 +22,6 @@ export default class head extends Vue {
     console.log(x);
   }
   render(h: any) {
-    // let self = this
-    // return h("div", {
-    //   attrs: {
-    //     id: "hell"
-    //   },
-    // domProps: {
-    //   innerHTML: "baz"
-    // },
-    //   on: {
-    //     click: self.Alert(123)
-    //   }
-    // });
-    let self = this;
     return (
       <div class="head">
         <p onClick={() => this.Alert(122343)}>{this.date}</p>

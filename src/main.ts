@@ -1,19 +1,26 @@
 import Vue from 'vue';
 import App from './App.vue';
-import router from './router';
+import { createRouter } from './router';
+import { createStore } from './store';
 import store from './store';
 import './registerServiceWorker';
 // import Vant from 'vant';
 
 import 'vant/lib/vant-css/index.css';
-var VueTouch = require('vue-touch')
+let VueTouch = require('vue-touch');
 
-Vue.use(VueTouch, {name: 'v-touch'})
+Vue.use(VueTouch, { name: 'v-touch' });
 
 Vue.config.productionTip = false;
 
-new Vue({
-  router,
-  store,
-  render: (h: any) => h(App),
-}).$mount('#app');
+export function createApp() {
+  const router = createRouter();
+  const store = createStore();
+  const app = new Vue({
+    router,
+    store,
+    render: (h: any) => h(App)
+  });
+  return { app, router, store };
+}
+
