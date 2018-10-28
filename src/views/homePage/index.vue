@@ -3,9 +3,9 @@
     <my-head></my-head>
     <Dialog v-model="install" >
       
-      <p>娣诲姞搴旂敤</p>
+      <p>添加应用</p>
     </dialog>
-    <Button type="default" plain>榛樿鎸夐挳</Button>
+    <Button type="default" plain>默认按钮</Button>
     <p>{{date}}</p>
     <Card></Card>
   </v-touch>  
